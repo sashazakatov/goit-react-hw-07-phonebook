@@ -1,0 +1,16 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.button{
+    width: 100px;
+}
+.lable{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.input{
+    width: 200px;
+}

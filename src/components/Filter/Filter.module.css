@@ -1,0 +1,8 @@
+.lable{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.input{
+    width: 200px;
+}
