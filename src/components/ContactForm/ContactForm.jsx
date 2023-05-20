@@ -1,18 +1,14 @@
-import { useEffect } from 'react'
 import css from './ContactForm.module.css'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addTask } from 'store/contactsSlice'
-import { getContacts } from 'store/selectors'
+import { selectorItem } from 'store/selectors'
+
+import { addContact } from 'store/operations';
  
 const ContactForm = () => {
 
     const dispatch = useDispatch();
-    const contacts = useSelector(getContacts);
-
-    useEffect(() => {
-        localStorage.setItem('contacts', JSON.stringify(contacts));
-    }, [contacts]);
+    const contacts = useSelector(selectorItem);
 
     const isContactExists = (value) => {
         return contacts.find(({name}) => name.toLowerCase() === value.toLowerCase());
@@ -29,7 +25,7 @@ const ContactForm = () => {
             return;
           }
 
-        dispatch(addTask({
+        dispatch(addContact({
             name: name.value,
             number: number.value,
         }))

@@ -1,20 +1,30 @@
 import ContactForm from "components/ContactForm";
 import Filter from "components/Filter";
-import ContactList from 'components/ContactList'
+import Loader from "components/Loader";
+import ContactList from 'components/ContactList';
 
 import { useSelector } from "react-redux";
-import { getContacts } from 'store/selectors'
+import { selectorError, selectorIsLoading, selectorItem } from 'store/selectors'
+
+import css from './App.module.css'
 
 const App = () => {
-  const contacts = useSelector(getContacts);
+  const isLoading = useSelector(selectorIsLoading);
+  const error = useSelector(selectorError);
+  const items = useSelector(selectorItem);
+
 
   return (
     <div>
-    <h1>Phonebook</h1>
-    <ContactForm/>
-    <h1>Contacts</h1>
-    <Filter/>
-    {(contacts.length !== 0) && <ContactList/>}
+      <h1>Phonebook</h1>
+      <ContactForm/>
+      <h1>Contacts</h1>
+      <Filter/> 
+      <div className={css.selectors}>
+        { isLoading && <Loader/> }
+        {error && <p>{error}</p>}
+        {items && <ContactList/>}
+      </div>
     </div>
   );
 }
