@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { deleteContact } from 'store/operations';
 
 const ContactList = () => {
-
     const items = useSelector(selectorItem);
     const filter = useSelector(selectorFilter);
 
