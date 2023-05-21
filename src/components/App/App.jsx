@@ -4,14 +4,14 @@ import Loader from "components/Loader";
 import ContactList from 'components/ContactList';
 
 import { useSelector } from "react-redux";
-import { selectError, selectIsLoading, selectItem } from 'store/selectors'
+import { selectError, selectIsLoading, selectItems } from 'store/selectors'
 
 import css from './App.module.css'
 
 const App = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-  const items = useSelector(selectItem);
+  const items = useSelector(selectItems);
 
 
   return (
