@@ -2,11 +2,11 @@ import css from './Filter.module.css'
 
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from 'store/filterSlice'
-import { selectorFilter } from 'store/selectors'
+import { selectFilter } from 'store/selectors'
 
 const Filter = () => {
   const dispath = useDispatch();
-  const filter = useSelector(selectorFilter);
+  const filter = useSelector(selectFilter);
   return(
     <label className={css.lable}>
     Find contact by name

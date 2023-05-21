@@ -1,14 +1,14 @@
 import css from './ContactForm.module.css'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { selectorItem } from 'store/selectors'
+import { selectItem } from 'store/selectors'
 
 import { addContact } from 'store/operations';
  
 const ContactForm = () => {
 
     const dispatch = useDispatch();
-    const contacts = useSelector(selectorItem);
+    const contacts = useSelector(selectItem);
 
     const isContactExists = (value) => {
         return contacts.find(({name}) => name.toLowerCase() === value.toLowerCase());
