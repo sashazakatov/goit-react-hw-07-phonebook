@@ -35,7 +35,10 @@ const ContactList = () => {;
                     }
                 >
                     Delete
-                    {isDeleting && id === activeId && <Loader width={15}/>}
+                    {   isDeleting && 
+                        id === activeId && 
+                        <Loader width={15}/>
+                    }
                 </button>
             </li>)
         }
