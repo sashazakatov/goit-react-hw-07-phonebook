@@ -1,10 +1,13 @@
-import { InfinitySpin } from  'react-loader-spinner'
+import { RotatingLines } from  'react-loader-spinner'
 
-const Loader = () => {
+const Loader = ({width}) => {
     return(
-        <InfinitySpin 
-            width='200'
-            color="#4fa94d"
+        <RotatingLines
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width={width}
+            visible={true}
         />
     )
 }

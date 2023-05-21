@@ -21,7 +21,7 @@ const App = () => {
       <h1>Contacts</h1>
       <Filter/> 
       <div className={css.selectors}>
-        { isLoading && <Loader/> }
+        { isLoading && <Loader width={100}/> }
         {error && <p>{error}</p>}
         {items && <ContactList/>}
       </div>

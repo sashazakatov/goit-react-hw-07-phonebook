@@ -4,7 +4,11 @@
     gap: 10px;
 }
 .button{
-    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 150px;
 }
 .lable{
     display: flex;
