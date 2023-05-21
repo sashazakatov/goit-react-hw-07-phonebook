@@ -25,9 +25,12 @@ const ContactForm = () => {
             return;
           }
 
+        console.log( 'name', name.value);
+        console.log( 'number', number.value);
+        
         dispatch(addContact({
             name: name.value,
-            number: number.value,
+            phone: number.value,
         }))
 
         form.reset();
