@@ -6,6 +6,7 @@ import { selectItems, selectIsAdding } from 'store/selectors'
 import { RotatingLines } from  'react-loader-spinner'
 
 import { addContact } from 'store/operations';
+import Loader from 'components/Loader/Loader';
 
 const ContactForm = () => {
 
@@ -62,14 +63,7 @@ const ContactForm = () => {
         </label>
         <button className={css.button} type="submit">
             Add contact
-            {isAdding && 
-                <RotatingLines
-                    strokeColor="grey"
-                    strokeWidth="5"
-                    animationDuration="0.75"
-                    width="15"
-                    visible={true}
-            />} 
+            {isAdding && <Loader width={15}/>} 
         </button>
         </form>
     )
